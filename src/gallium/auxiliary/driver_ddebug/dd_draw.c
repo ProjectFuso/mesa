@@ -41,6 +41,10 @@
 #include <inttypes.h>
 #include "util/detect.h"
 
+#ifdef __illumos__
+#include <alloca.h>
+#endif
+
 void
 dd_get_debug_filename_and_mkdir(char *buf, size_t buflen, bool verbose)
 {
