@@ -35,6 +35,9 @@
 #include <stdint.h>
 #include <string.h>
 #include <sys/ioctl.h>
+#ifdef __illumos__
+#include <sys/ioccom.h>
+#endif
 #include <unistd.h>
 #include <stdlib.h>
 #include <time.h>
