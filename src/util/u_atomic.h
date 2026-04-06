@@ -20,7 +20,7 @@
  * locally coded assembly, compiler intrinsic or ultimately a
  * mutex-based implementation.
  */
-#if defined(__sun)
+#if defined(__sun) && !defined(__illumos__)
 #define PIPE_ATOMIC_OS_SOLARIS
 #elif defined(_MSC_VER)
 #define PIPE_ATOMIC_MSVC_INTRINSIC
