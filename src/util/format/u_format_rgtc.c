@@ -230,7 +230,7 @@ util_format_rgtc1_snorm_pack_rgba_float(uint8_t *restrict dst_row, unsigned dst_
    for(y = 0; y < height; y += bh) {
       int8_t *dst = (int8_t *)dst_row;
       for(x = 0; x < width; x += bw) {
-         int8_t tmp[4][4];  /* [bh][bw][comps] */
+         signed char tmp[4][4];  /* [bh][bw][comps] */
          for(j = 0; j < bh; ++j) {
             for(i = 0; i < bw; ++i) {
                tmp[j][i] = float_to_byte_tex(src_row[(y + j)*src_stride/sizeof(*src_row) + (x + i)*4]);
@@ -529,8 +529,8 @@ util_format_rxtc2_snorm_pack_rgba_float(uint8_t *restrict dst_row, unsigned dst_
    for(y = 0; y < height; y += bh) {
       int8_t *dst = (int8_t *)dst_row;
       for(x = 0; x < width; x += bw) {
-         int8_t tmp_r[4][4];  /* [bh][bw][comps] */
-         int8_t tmp_g[4][4];  /* [bh][bw][comps] */
+         signed char tmp_r[4][4];  /* [bh][bw][comps] */
+         signed char tmp_g[4][4];  /* [bh][bw][comps] */
          for(j = 0; j < bh; ++j) {
             for(i = 0; i < bw; ++i) {
                tmp_r[j][i] = float_to_byte_tex(src_row[(y + j)*src_stride/sizeof(*src_row) + (x + i)*4]);
