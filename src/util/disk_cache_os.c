@@ -942,7 +942,11 @@ disk_cache_generate_cache_dir(void *mem_ctx, const char *gpu_name,
       while (1) {
          buf = ralloc_size(mem_ctx, buf_size);
 
+#ifdef __illumos__
+         result = getpwuid_r(getuid(), &pwd, buf, buf_size);
+#else
          getpwuid_r(getuid(), &pwd, buf, buf_size, &result);
+#endif
          if (result)
             break;
 
