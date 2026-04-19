@@ -477,7 +477,7 @@ drilCreateNewScreen(int scrn, int fd,
    return malloc(sizeof(int));
 }
 
-const __DRIextension *__driDriverExtensions[];
+PUBLIC const __DRIextension *__driDriverExtensions[];
 
 static __DRIscreen *
 dril2CreateNewScreen(int scrn, int fd,
